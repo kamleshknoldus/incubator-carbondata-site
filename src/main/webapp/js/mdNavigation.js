@@ -1,3 +1,6 @@
+
+
+
 //Purpose of this JS
       function loadContentUsingIdAttr(listOfLinks){
         for(var i = 0; i < listOfLinks.length; i++){
@@ -8,6 +11,8 @@
                 $(listOfLinks[i]).click(function(e){
                    $("#viewpage").load($(e.currentTarget).attr("href"));
                    if($(this).is('a:not([href^="#"])')) {
+                       $('html, body').animate({scrollTop:-60}, 'slow');
+                       return false;
                        }else{
                           $('a').off('click')
                        }
@@ -46,6 +51,7 @@
 function divPrint() {
         $("#viewpage").addClass("printable");
   window.print();
-} 
+}
+
 
 
