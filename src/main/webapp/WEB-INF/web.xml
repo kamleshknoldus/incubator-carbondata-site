@@ -33,5 +33,15 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+<servlet-name>Feedback</servlet-name>
+<servlet-class>Feedback</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Feedback</servlet-name>
+<url-pattern>/feedback</url-pattern>
+</servlet-mapping>
 
 </web-app>

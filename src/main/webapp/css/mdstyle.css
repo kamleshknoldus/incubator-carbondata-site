@@ -72,9 +72,21 @@ border-bottom: 1px dashed #e1e1e1;}
 #viewpage td{word-break: break-all;}
 #viewpage th { white-space: nowrap;}
 
+#viewpage li p{ margin: 0}
 
-#viewpage h2 { position: relative; }
-#viewpage h2:before{ display: block; content: " "; margin-top: -2px; height:40px; visibility: hidden; }
+#viewpage h2 {
+    position: relative;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#viewpage h2:before {
+    display: block;
+    content: " ";
+    margin-top: -10px;
+    height: 50px;
+    visibility: hidden;
+}
 
 #viewpage code {
     color: #dd6300;
