@@ -5,7 +5,7 @@ $(document).ready(function(){
   $('#fullwidth').addClass('fullwidth');
 
   // display video player
-  $('#mList a').on('click',function(e){
+  $('#videoList a').on('click',function(e){
     $('#fullwidth').removeClass('fullwidth');
 
     e.preventDefault();
@@ -13,21 +13,21 @@ $(document).ready(function(){
     var u = $(this).attr('href');
     var i = u.substring(u.search('=')+1,u.length);
     // build player
-    $('#mPlayer .videoview').html('<iframe width="640" height="400" src="https://www.youtube.com/embed/' + i + '" frameborder="0" allowfullscreen></iframe>');
+    $('#videoPlayer .videoview').html('<iframe width="640" height="400" src="https://www.youtube.com/embed/' + i + '" frameborder="0" allowfullscreen></iframe>');
 
     // display player
-    $('#mPlayer').fadeIn(500);
+    $('#videoPlayer').fadeIn(500);
 
 
   }); // eof display player
 
   // hide video player
-  $('#mPlayer').on('click',function(e){
+  $('#videoPlayer').on('click',function(e){
 
     // hide player
-    $('#mPlayer').fadeOut(500);
+    $('#videoPlayer').fadeOut(500);
     // destroy player
-    $('#mPlayer .videoview').empty();
+    $('#videoPlayer .videoview').empty();
 
   }); // eof hide player
 });

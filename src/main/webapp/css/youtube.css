@@ -1,34 +1,71 @@
 
-#mList {
+#videoList {
     margin: 0px auto;
-    text-align: right;
+    text-align: left;
+
 }
 
 /* EOF demo */
-
-#mList a {
-    margin: 10px;
-    width: 275px;
-    height: 155px;
-    line-height: 155px; /* match height */
-    color: #FFF;
+#videoList .videobox {
+    border: 1px solid #fff;
+    color: #fff;
+    display: inline-table;
     font-weight: bold;
+    height: 160px;
+    line-height: 160px;
+    margin: 10px 5px;
     text-align: center;
     text-decoration: none;
-    border: 1px solid #000;
-    display: inline-table;
+    width: 300px;
+    background: #fff;
+    padding: 10px;
+    -webkit-box-shadow: 0px 1px 2px #aaa;
+    -moz-box-shadow: 0px 1px 2px #aaa;
+    box-shadow: 0px 1px 2px #aaa;
+}
+
+
+.videothumb{ }
+
+
+.videothumblink {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.videoboxtitle {
+    display: block;
+    margin: 0;
+    padding: 10px 2px 0;
+    line-height: 16px;
+    /*border: 1px solid #ddd;*/
+    overflow: hidden;
+    position: relative;
+
+}
+.videoboxtitlelink {
+    font-size: 13px;
+    height: 50px;
+    display: block;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-align: center;
 }
 
 /* media list title overlay */
 
-#mList a .videoplay {
+#videoList .videothumb .videoplay {
     visibility: visible;
     background: rgba(0, 0, 0, .3);
 }
 
 /* On hover actions */
 
-#mList a:hover .videoplay {
+#videoList .videothumb:hover .videoplay {
     visibility: hidden;
 }
 
@@ -36,11 +73,11 @@
 
 /* background overlay */
 
-#mPlayer {
+#videoPlayer {
     display: none;
 }
 
-#mPlayerblock {
+#videoPlayerblock {
     background: rgb(248, 248, 248);
     position: relative;
     width: 100%;
@@ -48,23 +85,35 @@
     z-index: 20;
     left: 0;
     top: 10px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 1px 2px #aaa;
+    -moz-box-shadow: 0px 1px 2px #aaa;
+    box-shadow: 0px 1px 2px #aaa;
 }
+
+.videobox {
+    display: inline-block;
+}
+.videobox-title{}
+.videobox-title-link{}
+
 
 /* video player */
 
-#mPlayerblock .videoview {
+#videoPlayerblock .videoview {
     position: relative;
     background: #000;
     width: 100%; /* width of YouTube Player */
-    height: 360px; /* height of YouTube Player */
+    height: 400px; /* height of YouTube Player */
     /*left: calc(50vw - 280px); !* 280 is .5(560), centers x axis*!*/
     /*top: calc(50vh - 157px); !* 157 is .5(315), centers y axis*!*/
     margin: 0;
     border: 1px solid #000;
-    max-width: 690px;
+    max-width: 730px;
+
 }
 
-#mPlayerblock iframe {
+#videoPlayerblock iframe {
     width: 100%;
     height: 100%;
 }
@@ -77,125 +126,60 @@
     width: 100%
 }
 
-.fullwidth #mList {
-    margin: 0px;
-    text-align: left;
-    border: 0;
-    background: none;
-    padding: 0;
-}
 
-.fullwidth #mList a {
-    margin: 10px;
-}
-
-@media (min-width: 768px) {
-    .videoblock {
-        width: 940px;
-        margin: 10px auto
+@media (max-width: 960px){
+    #videoPlayerblock .videoview {
+        height: 260px;
+        margin:0 auto;
+        max-width: 460px;
     }
 
-    #mList {
-        margin-top: 10px;
-        text-align: center;
-        background: #f8f8f8;
-        border: 1px solid #ddd;
-        padding: 0 10px 10px;
-    }
-
-    #mList a {
-        margin: 10px 0 0;
+    #videoList .videobox {
+        height: 140px;
+        line-height: 140px;
+        margin: 10px 4px;
+        max-width: 260px;
+        padding: 8px;
         width: 100%;
-        height: 160px;
-        line-height: 160px;
-        max-width: 290px;
-    }
-}
-
-@media (max-width: 990px) {
-    .videoblock {
-        width: 720px;
-        margin: 10px auto
-    }
-
-    #mPlayerblock .videoview {
-        width: 100%; /* width of YouTube Player */
-        height: 290px; /* height of YouTube Player */
-    }
-
-    .fullwidth #mList a {
-        width: 100%;
-        height: 160px;
-        line-height: 160px;
-        max-width: 290px;
-    }
-
-    #mList a {
-        margin: 10px 0 0;
-        width: 100%;
-        height: 126px;
-        line-height: 126px;
-        max-width: 290px;
     }
 }
 
 @media (max-width: 767px) {
-    .videoblock {
-        width: 100%;
-        margin: 10px auto
-    }
-
-    .fixed-padding {
-        padding-top: 56px;
-    }
-
-    #mPlayerblock .videoview {
-        width: 440px;
-        height: 220px;
-        margin: auto;
-    }
-
-    #mPlayerblock iframe {
-        width: 100%;
-        height: 100%;
-    }
-
-    #mList {
-        margin-top: 10px;
-        text-align: left;
-        max-width: 440px;
-    }
-
-    #mList a {
-        margin: 10px 0 0;
-        width: 100%;
-        height: 138px;
-        line-height: 138px;
-        max-width: 240px;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    #mPlayerblock {
+   #videoPlayerblock {
         margin-bottom: 20px;
     }
 
-    #mPlayerblock .videoview {
-        width: 100%;
-        height: 220px;
-        margin: auto;
+    #videoList .videobox {
+        margin: 10px 0;
     }
 
-
-
-    #mList a {
-        margin: 10px auto;
-        width: 100%;
-        height: 150px;
-        line-height: 150px;
-        display: block;
-        max-width: 240px;
+    #videoPlayerblock .videoview {
+        height: 270px;
+        margin: 0 auto;
+        max-width: 480px;
     }
 }
+
+@media (max-width:480px){
+    #videoList .videobox {
+        display: table;
+        margin: 10px auto;
+        height: 130px;
+        line-height: 130px;
+        width: 240px;
+    }
+
+    #videoPlayerblock .videoview {
+        width: 100%;
+        height: inherit;
+        margin: 0 auto;
+        max-width: 290px;
+    }
+    .videoboxtitlelink {
+        font-size: 13px;
+        height: initial;
+        text-align: left;
+    }
+}
+
+
